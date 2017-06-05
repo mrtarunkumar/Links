@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+<body>
+    <h2>Toggle Links</h2>
+    <section>
+        <div class="container" id="dtails">
+            <div data-id="dv1" class="clickme">Link 1</div>
+            <div data-id="dv2" class="clickme">Link 2</div>
+            <div data-id="dv3" class="clickme">Link 3</div>
+            <div data-id="dv4" class="clickme">Link 4</div>
+            
+            <div class="furtherinfo">
+                <div id="dv1" class="hideMe">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, ab alias dolor. Laborum perferendis consequatur possimus, autem. Qui, culpa deleniti aliquam fugiat esse, consequatur officia, ut recusandae praesentium cum velit.</div>
+                <div id="dv2" class="hideMe">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas doloremque accusamus cum veniam. Necessitatibus eveniet, ullam earum quia praesentium quidem debitis obcaecati magnam. Culpa magni dicta in deserunt ducimus earum?</div>
+                <div id="dv3" class="hideMe">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam error veniam animi eveniet, corporis qui cum odio, recusandae veritatis autem nihil, quae iusto magni laudantium eaque pariatur consectetur quod dicta.</div>
+                <div id="dv4" class="hideMe">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error aliquid placeat ipsam reprehenderit nam aut, laboriosam quidem officiis voluptas necessitatibus. Eum, tenetur quia nemo deserunt perspiciatis sed voluptatibus quae delectus?</div>
+            </div>
+            
+            
+        </div>
+    </section>
+    <style> 
+        .hideMe{
+            display: none;
+        }
+        .showMe {
+            display: block;            
+        }
+        .furtherinfo{
+            margin-top: 20px;
+            width:50%;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+    $( "div.clickme" ).click(function() {
+       var divID = $(this).data("id");
+       if($('#' + divID).hasClass('showMe')){
+           $('#' + divID).removeClass("showMe"); 
+       }else{
+           $('div.hideMe').removeClass('showMe');
+           $('#' + divID).addClass("showMe"); 
+       };
+    });
+    </script>   
+</body>
+</html>
